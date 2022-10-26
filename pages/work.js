@@ -22,7 +22,7 @@ export async function getStaticProps() {
         pageData: data.data.pageData,        
         settings: data.data.settings
       },
-      revalidate: 1800
+      revalidate: 1
     }
 
   }).catch(err => {
