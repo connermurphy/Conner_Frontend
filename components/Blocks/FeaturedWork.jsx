@@ -44,7 +44,7 @@ function FeaturedWork(props) {
                     </div>
                     <div className='pt-12'>
                         <Link href='/work'>
-                            <a className='btn btn__primary'>Browse all works</a>
+                            <a className='btn btn__primary inline-block'>Browse all works</a>
                         </Link>
                     </div>
                 </div>
