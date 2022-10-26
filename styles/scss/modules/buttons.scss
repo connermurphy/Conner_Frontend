@@ -1,0 +1,27 @@
+.btn {
+    border: solid 1px;
+    border-radius: 50px;
+    @apply px-5 py-3;
+    transition: all .175s ease-in;
+
+    &__primary {
+        background: $blue;
+        border-color: $blue;
+        color: $white;
+
+        &:hover {
+            background: #005DC5;
+            border-color: #005DC5;
+        }
+    }
+
+    &__secondary {
+        background: $white;
+        border-color: $white;
+        color: $black;
+
+        &:hover {
+            border-color: $lightGrey;
+        }
+    }
+}

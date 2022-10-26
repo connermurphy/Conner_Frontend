@@ -1,0 +1,23 @@
+.cta-banner {
+    min-height: 375px;
+    background: $black;
+    border-radius: 16px;
+    @apply p-6 md:p-12 lg:p-20;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $white;
+
+    h2 {
+        @apply text-3xl md:text-4xl;
+        max-width: 500px;
+    }
+
+    @media screen and (min-width: $bpMedium) {
+        min-height: 400px;
+    }
+
+    @media screen and (min-width: $bpLarge) {
+        min-height: 500px;
+    }
+}

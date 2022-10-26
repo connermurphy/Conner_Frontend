@@ -1,19 +1,19 @@
 import Layout from "../components/Layout";
 
-import HomePage from "../components/Pages/HomePage";
+import WorkPage from "../components/Pages/WorkPage";
 
 import axios from "axios";
 
-export default function Home({ pageData, settings }) {
+export default function Work({ pageData, settings }) {
   return (
-    <Layout PageComponent={<HomePage content={pageData} />} SiteSettings={settings} />
+    <Layout PageComponent={<WorkPage content={pageData} />} SiteSettings={settings} />
   )
 }
 
 export async function getStaticProps() {
 
   return axios({
-    url: `${process.env.API_SERVER}/home`,
+    url: `${process.env.API_SERVER}/work`,
     method: "GET"
   }).then(data => {
 

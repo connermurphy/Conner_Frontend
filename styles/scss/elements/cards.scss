@@ -1,0 +1,160 @@
+.project-list {
+
+    margin-top: -3rem;
+
+    @media screen and (min-width: $bpMedium) {
+        width: calc(100% + 2rem);
+        margin-left: -1rem;
+    }
+
+    @media screen and (min-width: $bpLarge) {        
+        margin-top: -4rem;
+    }
+}
+
+.project-card {
+
+    flex: 0 0 100%;
+    @apply pt-12 lg:pt-16;
+
+    &__inner {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        cursor: pointer;
+    }
+
+    &__image {
+
+        @apply w-full;
+
+        figure {
+            padding-top: 66.66%;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 16px;
+            }
+        }
+    }
+
+    &__text {
+
+        @apply w-full;
+
+        h3 {
+            @extend .neue-medium;
+            @apply text-xl lg:text-2xl;
+            @apply py-4;
+        }
+    }
+
+    &__skills {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px;
+
+        > li {
+
+            display: flex;
+            align-items: center;
+            @apply px-3 py-1;
+            border: solid 1px $grey;
+            border-radius: 36px;            
+
+            span {
+
+                display: flex;
+                align-items: center;
+                @apply text-sm;
+
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 12px;
+                    height: 12px;
+                    border-radius: 50%;
+                    background: $blue;
+                    @apply mr-2;
+                }
+            }
+
+            &.skill-development {
+                span::before {
+                    background: #53C1FF;
+                }
+            }
+
+            &.skill-radiator {
+                span::before {
+                    background: #FF5353;
+                }
+            }
+
+            &.skill-freelance {
+                span::before {
+                    background: #A953FF;
+                }
+            }
+
+            &.skill-shopify {
+                span::before {
+                    background: #96bf48;
+                }
+            }
+
+            &.skill-strapi {
+                span::before {
+                    background: #8e76ff;
+                }
+            }
+        }
+    }
+
+    &--featured {
+        flex: 0 0 100% !important;        
+
+        .project-card {
+
+            &__inner {
+                @apply p-4 md:p-6 lg:p-8;
+                background: $black;
+                border-radius: 16px;
+            }
+
+            &__image {
+                @apply md:w-1/2;
+
+                figure {
+                    padding-top: 66.66%;
+
+                    img {
+                        border-radius: 8px;
+                    }
+
+                    @media screen and (min-width: $bpMedium) {
+                        padding-top: 100%;
+                    }    
+                }
+            }
+
+            &__text {
+                @apply md:w-1/2;
+                margin-top: auto;
+                color: $white;
+            }
+        }
+    }
+
+    @media screen and (min-width: $bpMedium) {
+        flex: 0 0 50%;
+        @apply px-4;
+    }
+}

@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind utilities;
+
+* {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    font-size: 16px;
+    @extend .neue-medium;
+    color: $black;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    @apply px-4 md:px-6 lg:px-10;
+
+    &.tight {
+        max-width: 1100px;
+    }
+}
+
+section {
+    .container {
+        @apply py-16 lg:py-24 xl:py-[7rem];
+    }
+
+    & + section {
+        .container {
+            padding-top: 0 !important;
+        }
+    }
+
+    & + footer {
+        .container {
+            padding-top: 0 !important;
+        }
+    }
+}
+
+footer {
+    .container {
+        @apply pt-16 lg:pt-24 xl:pt-[7rem];
+        @apply pb-8;
+    }
+
+}
+
+.section-header {
+    & + .section-content {
+        @apply pt-6 md:pt-8 lg:pt-12;
+    }
+}
+
+.social-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 16px;
+
+    > li > a {
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: $blue;
+        transition: all 0.175s ease-in;
+
+        &:hover {
+            background: #005dc5;
+        }
+
+        @media screen and (min-width: $bpMedium) {
+            width: 55px;
+            height: 55px;
+        }
+    }
+}
+
+.tech-list {
+    > li {
+
+        > span {
+            display: flex;
+            align-items: center;
+        }
+
+        &.tech-nextjs {
+            span::before {
+                background: #53c1ff;
+            }
+        }
+
+        &.tech-nodejs {
+            span::before {
+                background: #3c873a;
+            }
+        }
+
+        &.tech-shopify {
+            span::before {
+                background: #96bf48;
+            }
+        }
+
+        &.tech-strapi {
+            span::before {
+                background: #8e76ff;
+            }
+        }     
+
+        &.tech-umbraco {
+            span::before {
+                background: #3643b3;
+            }
+        }
+    }
+}
+
+body.popup-open {
+    overflow: hidden;
+
+    .project-popup {
+        opacity: 1;
+        pointer-events: all;
+        
+        &__inner {
+            right: 0;
+        }
+    }
+}

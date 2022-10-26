@@ -1,0 +1,39 @@
+.site-footer {
+
+    .container {
+        max-width: 100%;
+    }
+
+    &__links {
+        ul {
+            
+            width: calc(100% + 2rem);
+            margin-left: -1rem;
+
+            li {
+
+                @apply px-4;
+
+                a {
+                    @apply text-md md:text-lg;
+                    transition: color .175s ease-in;
+
+                    &:hover {
+                        color: $blue;
+                    }
+                }
+            }
+
+        }
+    }
+
+    &__watermark {
+        a {
+            transition: color .175s ease-in;
+            
+            &:hover {
+                color: $blue;
+            }
+        }
+    }
+}
