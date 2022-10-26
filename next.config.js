@@ -5,7 +5,8 @@ const nextConfig = {
   images: {
     domains: [
       'localhost',
-      'openweathermap.org'
+      'openweathermap.org',
+      'panel.connermurphy.net'
     ]
   }
 }
