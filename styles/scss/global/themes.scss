@@ -1,0 +1,40 @@
+.theme-dark {
+    background: $black;
+    color: $white;
+
+    .site-nav {
+       .container {
+            background: $white;            
+       }
+
+       &__brand {
+            a {
+                color: $black;
+            }
+       }
+
+       &__toggle {
+            button {
+                span {
+                    &, &::before, &::after {
+                        background: $black;
+                    }
+                }
+            }
+       }
+    }
+
+    .site-header {
+        color: $white;
+    }
+
+    section {
+        &, * {
+            color: $white;
+        }
+    }
+
+    .site-footer {
+        color: $white;
+    }
+}

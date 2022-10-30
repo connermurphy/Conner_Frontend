@@ -4,6 +4,7 @@ import AboutBlock from "./Blocks/AboutBlock";
 import ServicesBlock from "./Blocks/ServicesBlock";
 import CTABanner from "./Blocks/CTABanner";
 import ProjectList from "./Blocks/ProjectList";
+import ContactBlock from "./Blocks/ContactBlock";
 
 const getBlockComponent = ({ __component, ...rest }, index) => {
     let Block;
@@ -26,6 +27,9 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
             break;
         case 'blocks.project-list':
             Block = ProjectList;
+            break;
+        case 'blocks.contact-form':
+            Block = ContactBlock;
             break;
     }
 

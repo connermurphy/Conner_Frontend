@@ -1,0 +1,121 @@
+.contact-block{
+    &__form {
+        > form {
+            .input-group {
+
+                @apply pt-4 lg:pt-8;
+                border-top: solid 1px $grey;
+
+                &__header {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: flex-start;
+
+                    span {
+                        color: $grey;
+                        display: inline-block;
+                        @apply pb-2;
+                        width: 30px;
+                    }
+
+                    label {
+                        @apply text-lg;
+                        @apply md:pl-6 lg:pl-8 #{!important};
+                        top: -4px;
+                        @apply w-full;
+                    }
+
+                    @media screen and (min-width: 450px) {
+                        span {
+                            flex: 0 1 30px;      
+                            @apply pb-0;                      
+                        }
+
+                        label {
+                            flex: 0 1 auto;
+                            @apply pt-0 pl-4;
+                        }
+                    }
+                }
+
+                &__field {
+
+                    @apply pt-2;                    
+
+                    input, textarea {
+                        background: transparent;
+                        border-bottom: solid 1px transparent;
+                        outline: none !important;
+                        @apply py-2;
+                        width: 100%;
+                        max-width: 300px;
+
+                        &:focus, &.valid {
+                            border-color: $blue;
+                        }
+
+                        &.invalid {
+                            border-color: $red !important;
+
+                            & + .input-group__validation {
+                                opacity: 1;
+                                color: $red;
+                            }
+                        }
+
+                        @media screen and (min-width: $bpLarge) {
+                            max-width: 80%;
+                        }
+                    }
+                    
+                    textarea {
+                        resize: vertical;
+                        max-height: 300px;
+                        min-height: 200px;
+                    } 
+
+                    @media screen and (min-width: 450px) {
+                        padding-left: 30px;
+                    }
+
+                    @media screen and (min-width: $bpMedium) {
+                        padding-left: calc(30px + 1.5rem);
+                    }
+
+                    @media screen and (min-width: $bpLarge) {
+                        padding-left: calc(30px + 2rem);
+                    }
+                }
+
+                &__validation {
+
+                    display: block;
+                    @apply pt-2;     
+                    opacity: 0;                                   
+                }
+
+                &.submit {
+                    border-bottom: none !important;
+                    text-align: right;
+
+                    button {                        
+                        display: inline-block;
+                    }
+                }
+
+                & + .input-group {
+                    @apply mt-10;
+                }
+
+                &:last-of-type {
+                    @apply pb-4 lg:pb-8;
+                    border-bottom: solid 1px $grey;
+                }
+            }
+        }
+    }
+
+    &__info {
+        color: $white;
+    }
+}

@@ -72,6 +72,17 @@ footer {
         background: $blue;
         transition: all 0.175s ease-in;
 
+        svg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 25px;
+            width: 25px;
+            transform: translate(-50%, -50%);
+            color: $white;
+            fill: $white;
+        }
+
         &:hover {
             background: #005dc5;
         }

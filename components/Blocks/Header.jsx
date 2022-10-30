@@ -9,7 +9,7 @@ function Header(props) {
     return (
         <header className='site-header pt-10 md:pt-16 lg:pt-20'>
             <div className='container flex flex-row flex-wrap justify-between'>
-                <h1 className='w-full md:w-[60%] lg:w-[40%] md:pr-8 lg:pr-16'>
+                <h1 className='w-full md:w-[60%] lg:w-[45%] md:pr-8 lg:pr-16'>
                     <Markdown>
                         {props.Title != null ? props.Title : ''}
                     </Markdown>

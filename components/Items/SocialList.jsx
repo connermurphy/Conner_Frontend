@@ -2,6 +2,8 @@ import React from 'react';
 
 import Link from 'next/link';
 
+import Markdown from 'markdown-to-jsx';
+
 function SocialList({ socials }) {
     if (socials != null && socials.length) {
         return (
@@ -10,8 +12,10 @@ function SocialList({ socials }) {
                     socials.map((item, index) => {
                         return (
                             <li key={index}>
-                                <Link href={item.Link} target='_blank' rel='noreferrer'>
-                                    <a></a>
+                                <Link href={item.Link != null ? item.Link : '#'} target='_blank' rel='noreferrer'>
+                                    <a>
+                                        <Markdown>{item.FontAwesome != '' || item.FontAwesome != null ? item.FontAwesome : ''}</Markdown>
+                                    </a>
                                 </Link>
                             </li>
                         )

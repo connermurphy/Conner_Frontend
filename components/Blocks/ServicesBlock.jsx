@@ -11,7 +11,7 @@ function AboutBlock(props) {
                 </div>
                 <div className='section-content'>
                     <div className='split-block flex flex-row flex-wrap lg:justify-between'>
-                        <div className='split-block__text w-full md:w-1/2 lg:w-1/2 md:pr-6 lg:pr-10 pb-8 md:pb-0'>
+                        <div className='split-block__text w-full md:w-1/2 lg:w-2/3 md:pr-6 lg:pr-10 pb-8 md:pb-0'>
                             <p className='text-lg'>{props.Summary != null ? props.Summary : ''}</p>                            
                         </div>
                         <div className='split-block__socials w-full md:w-1/2 lg:w-1/3 md:pl-6 lg:pl-10'>

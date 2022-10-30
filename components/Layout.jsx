@@ -16,6 +16,12 @@ function Layout({ PageComponent, SiteSettings }) {
 
     useEffect(() => {        
 
+        if (PageComponent.props.content.Dark) {
+            document.documentElement.classList.add('theme-dark')
+        } else {
+            document.documentElement.classList.remove('theme-dark')
+        }
+
         const animateList = () => {
             const animCallback = (items, observer) => {
                 items.forEach((item, index) => {
@@ -81,7 +87,7 @@ function Layout({ PageComponent, SiteSettings }) {
 
         observeAnimations();
 
-    }, [router])
+    }, [router, PageComponent.props.content.Dark])
 
     return (
         <>
