@@ -4,10 +4,10 @@ import Link from 'next/link';
 
 import Markdown from 'markdown-to-jsx';
 
-function SocialList({ socials }) {
+function SocialList({ socials, animate = false }) {
     if (socials != null && socials.length) {
         return (
-            <ul className='social-list list fadeOnly'>
+            <ul className={`social-list ${animate ? 'list fadeOnly' : ''}`}>
                 {
                     socials.map((item, index) => {
                         return (

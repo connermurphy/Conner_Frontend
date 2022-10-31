@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 
 import Nav from "./Layout/Nav";
 import Footer from "./Layout/Footer";
+import Menu from "./Layout/Menu";
 
 function Layout({ PageComponent, SiteSettings }) {
 
@@ -116,6 +117,7 @@ function Layout({ PageComponent, SiteSettings }) {
             </Head>    
             <div className="loader"></div>        
             <div className={`wrapper ${loading ? 'hide' : 'show'}`}>
+                <Menu socials={SiteSettings.Menu != null ? SiteSettings.Menu.Socials : []} />
                 <Nav logo={SiteSettings.Logo} />
                 {PageComponent}
                 <Footer settings={SiteSettings} />

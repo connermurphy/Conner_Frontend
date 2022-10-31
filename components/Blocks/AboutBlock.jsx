@@ -23,7 +23,7 @@ function AboutBlock(props) {
                         <div className='split-block__socials w-full md:w-1/2 lg:w-1/3 md:pl-6 lg:pl-10 flex md:justify-end'>
                             <div>
                                 <h4 className='pb-4 text-lg remove2animate fadeOnly'>Socials</h4>
-                                <SocialList socials={props.Socials} />
+                                <SocialList socials={props.Socials} animate={true} />
                             </div>
                         </div>
                         <div className='inline-block animated remove2animate fadeOnly'>

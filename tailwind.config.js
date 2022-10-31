@@ -23,6 +23,7 @@ module.exports = {
       '2xl': '2.438rem', //39px
       '3xl': '3.062rem', //49px
       '4xl': '3.812rem', //61px
+      '5xl': '6rem', //96px
     },
   },
   plugins: [],

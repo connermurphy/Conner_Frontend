@@ -195,7 +195,7 @@ function ContactBlock(props) {
                         props.Socials != null ? 
                         <div className='w-full'>
                             <h3 className='text-lg pb-2'>Socials</h3>
-                            <SocialList socials={props.Socials} />
+                            <SocialList socials={props.Socials} animate={true} />
                         </div> : <></>
                     }
                 </div>
