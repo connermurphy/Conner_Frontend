@@ -28,7 +28,7 @@ function AboutBlock(props) {
                         </div>
                         <div className='inline-block animated remove2animate fadeOnly'>
                             <Link href='/contact'>
-                                    <a className='btn btn__primary mt-12 md:hidden'>Let&apos;s Talk</a>
+                                    <a className='btn btn__primary mt-10 inline-block md:hidden'>Let&apos;s Talk</a>
                             </Link>
                         </div>
                     </div>
