@@ -49,14 +49,10 @@ function Layout({ PageComponent, SiteSettings }) {
             if ('IntersectionObserver' in window) {
     
                 var animatedElements = document.querySelectorAll('.remove2animate');
-
-                console.log(document.querySelectorAll('.remove2animate'))
         
                 var animationObserver = new IntersectionObserver(function (animatedElements) {
         
                     for (var i = 0; i < animatedElements.length; i++) {
-
-                        console.log(animatedElements[i])
 
                         var scope = animatedElements[i].target;
         

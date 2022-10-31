@@ -115,7 +115,7 @@ function ContactBlock(props) {
         <section id={props.id}>
             <div className='container tight flex flex-row flex-wrap items-start'>
                 <div className='contact-block__form w-full md:w-1/2 lg:w-2/3 md:pr-6 lg:pr-12 xl:pr-16 pb-8 md:pb-0'>
-                    <form onSubmit={handleSubmit}>
+                    <form onSubmit={handleSubmit} className='list'>
                         <div className='input-group'>
                             <div className='input-group__header'>
                                 <span>01</span>
@@ -173,7 +173,7 @@ function ContactBlock(props) {
                         </div>
                     </form>
                 </div>
-                <div className='contact-block__info w-full md:w-1/2 lg:w-1/3 md:pl-6 lg:pl-12 flex flex-wrap items-start md:justify-end'>                    
+                <div className='contact-block__info w-full md:sticky md:top-[20px] md:w-1/2 lg:w-1/3 md:pl-6 lg:pl-12 flex flex-wrap items-start md:justify-end'>                    
                     {
                         props.Contacts != null && props.Contacts.length ?
                         <div className='w-full pb-6 lg:pb-10'>

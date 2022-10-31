@@ -42,7 +42,7 @@ function FeaturedWork(props) {
                     <div className='project-list flex flex-row flex-wrap'>
                         <ProjectList projects={projects} passProject={(e) => showActiveProject(e)} />
                     </div>
-                    <div className='pt-12 animated remove2animate fadeOnly'>
+                    <div className='pt-12 animated remove2animate'>
                         <Link href='/work'>
                             <a className='btn btn__primary inline-block'>Browse all works</a>
                         </Link>
@@ -61,7 +61,7 @@ const ProjectList = ({ projects, passProject }) => {
         return (
             projects.map((proj, index) => {
                 return (
-                    <ProjectCard props={proj} key={index} showActiveProject={() => passProject(proj)} />
+                    <ProjectCard props={proj} index={index} key={index} showActiveProject={() => passProject(proj)} />
                 )
             })
         )

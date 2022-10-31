@@ -50,7 +50,7 @@ const ProjectCards = ({ projects, passProject }) => {
         return (
             projects.map((proj, index) => {
                 return (
-                    <ProjectCard props={proj} key={index} showActiveProject={() => passProject(proj)} />
+                    <ProjectCard props={proj} index={index} key={index} showActiveProject={() => passProject(proj)} />
                 )
             })
         )
