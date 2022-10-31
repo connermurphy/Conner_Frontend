@@ -3,7 +3,7 @@ import React from 'react';
 
 function Footer({ settings }) {
     return (
-        <footer className='site-footer'>
+        <footer className='site-footer animated remove2animate fadeOnly'>
             <div className='container flex flex-row flex-wrap items-center'>
                 <div className='site-footer__links w-full md:w-1/2 md:pr-6 lg:pr-12 pb-4 md:pb-0'>
                     <FooterLinks links={settings.Footer.Links != null ? settings.Footer.Links : []} />

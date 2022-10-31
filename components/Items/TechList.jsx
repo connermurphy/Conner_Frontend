@@ -4,7 +4,7 @@ function TechList({ tech }) {
 
     if (tech != null && tech.length) {
         return (
-            <ul className='project-card__skills tech-list'>
+            <ul className='project-card__skills tech-list list fadeOnly'>
                 {
                     tech.map((tech, index) => {
                     

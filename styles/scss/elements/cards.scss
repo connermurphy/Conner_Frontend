@@ -30,6 +30,8 @@
 
         figure {
             padding-top: 66.66%;
+            border-radius: 16px;
+            overflow: hidden;
 
             img {
                 position: absolute;
@@ -39,6 +41,7 @@
                 height: 100%;
                 object-fit: cover;
                 border-radius: 16px;
+                transition: all .5s cubic-bezier(0.7, 0.6, 0, 1);
             }
         }
     }
@@ -149,6 +152,14 @@
                 @apply md:w-1/2;
                 margin-top: auto;
                 color: $white;
+            }
+        }
+    }
+
+    &:hover {
+        .project-card__image {
+            img {
+                transform: scale(1.1);
             }
         }
     }

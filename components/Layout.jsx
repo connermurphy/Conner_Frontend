@@ -48,11 +48,16 @@ function Layout({ PageComponent, SiteSettings }) {
         const observeAnimations = () => {
             if ('IntersectionObserver' in window) {
     
-                var animatedElements = document.querySelectorAll('.remove2animate, .remove2zoom');
+                var animatedElements = document.querySelectorAll('.remove2animate');
+
+                console.log(document.querySelectorAll('.remove2animate'))
         
                 var animationObserver = new IntersectionObserver(function (animatedElements) {
         
                     for (var i = 0; i < animatedElements.length; i++) {
+
+                        console.log(animatedElements[i])
+
                         var scope = animatedElements[i].target;
         
                         if (animatedElements[i]['isIntersecting'] === true) { //when element comes into viewport

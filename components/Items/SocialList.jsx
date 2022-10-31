@@ -7,7 +7,7 @@ import Markdown from 'markdown-to-jsx';
 function SocialList({ socials }) {
     if (socials != null && socials.length) {
         return (
-            <ul className='social-list'>
+            <ul className='social-list list fadeOnly'>
                 {
                     socials.map((item, index) => {
                         return (

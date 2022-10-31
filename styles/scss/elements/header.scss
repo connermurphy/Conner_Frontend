@@ -3,7 +3,8 @@
     &__image {
         
         @apply w-full sm:w-[325px] md:w-[400px] lg:w-[500px];
-        height: 250px;
+        height: 250px;        
+        overflow: hidden;
 
         img {
             position: absolute;
@@ -14,10 +15,83 @@
             object-fit: cover;   
             border-radius: 16px;         
         }
+
+        &::after {
+            content: '';
+            background: $white;
+            position: absolute;            
+            left: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            animation: revealImage 1s cubic-bezier(0.7, 0.6, 0, 1) forwards;
+            animation-delay: inherit;
+        }
+        
     }
 
     &__location {
         line-height: 1.25;
     }
 
+    &__title {
+
+        overflow: hidden;
+        display: inline-flex;
+        align-items: center;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        > div {
+            display: inline-block;
+            overflow: hidden;            
+
+            > span:first-child {
+    
+                display: inline-block;
+                transform: translateY(150%);
+                animation: textIn 1.5s cubic-bezier(0.7, 0.6, 0, 1) forwards;
+            }
+
+            > span:nth-of-type(2) {
+                white-space: break-spaces;
+            }
+        }
+    }
+
+    &__summary {
+        animation: fadeIn .5s cubic-bezier(0.7, 0.6, 0, 1) forwards;
+        opacity: 0;
+    }
+
+    &__footer {
+        animation: fadeIn .5s cubic-bezier(0.7, 0.6, 0, 1) forwards;
+        opacity: 0;
+    }
+
+}
+
+@keyframes textIn {
+    0% {
+        transform: translateY(150%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes revealImage {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: -100%;
+    }
 }

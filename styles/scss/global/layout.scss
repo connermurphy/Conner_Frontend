@@ -85,6 +85,7 @@ footer {
 
         &:hover {
             background: #005dc5;
+            transform: translateY(-4px);
         }
 
         @media screen and (min-width: $bpMedium) {
@@ -131,6 +132,12 @@ footer {
                 background: #3643b3;
             }
         }
+    }
+}
+
+#section-1 {
+    .section-header {
+        transition-delay: 2s;
     }
 }
 

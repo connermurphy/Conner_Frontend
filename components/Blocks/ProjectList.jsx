@@ -31,7 +31,7 @@ function ProjectList(props) {
     }
 
     return (
-        <section>
+        <section id={props.id}>
             <div className='container tight'>
                 <div className='section-content'>
                     <div className='project-list flex flex-row flex-wrap'>

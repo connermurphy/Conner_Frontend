@@ -9,12 +9,10 @@ function Header(props) {
     return (
         <header className='site-header pt-10 md:pt-16 lg:pt-20'>
             <div className='container flex flex-row flex-wrap justify-between'>
-                <h1 className='w-full md:w-[60%] lg:w-[45%] md:pr-8 lg:pr-16'>
-                    <Markdown>
-                        {props.Title != null ? props.Title : ''}
-                    </Markdown>
+                <h1 className='site-header__title w-full md:w-[60%] lg:w-[45%] md:pr-8 lg:pr-16'>
+                    <SplitTitle text={props.Title} />
                 </h1>
-                <p className='text-md w-full md:w-auto md:flex-1 lg:pl-8 max-w-[350px] md:ml-auto pt-4 md:pt-0'>
+                <p className='site-header__summary text-md w-full md:w-auto md:flex-1 lg:pl-8 max-w-[350px] md:ml-auto pt-4 md:pt-0' style={{ animationDelay: `${props.Title.split(' ').length * .5}s` }}>
                     <Markdown>
                         {
                             props.Summary != null ? props.Summary : ''
@@ -23,13 +21,14 @@ function Header(props) {
                 </p>
                 {
                     props.Image != null ? <div className='w-full pt-6 md:pt-8 lg:pt-12'>
-                        <figure className='site-header__image'>                        
+                        <figure className='site-header__image' style={{ animationDelay: `${props.Title.split(' ').length * .35}s` }}>
                             <Image src={`${process.env.NEXT_PUBLIC_SERVER}${[props.Image.url]}`} priority='true' alt='Alt Text' layout='fill' />
                         </figure>                 
                     </div> : <></>
                 }
                 {
-                    props.Weather || props.Subtitle != null ? <div className='site-header__footer w-full flex flex-row flex-wrap items-end justify-between pt-6 md:pt-8 lg:pt-12'>
+                    props.Weather || props.Subtitle != null ? 
+                    <div className='site-header__footer w-full flex flex-row flex-wrap items-end justify-between pt-6 md:pt-8 lg:pt-12' style={{ animationDelay: `${props.Title.split(' ').length * .5}s` }}>
                         <div className='site-header__weather flex items-center'>
                             {
                                 props.Weather ? <WeatherDisplay /> : <></>
@@ -85,6 +84,25 @@ const WeatherDisplay = () => {
             <Image src={weather.icon} priority width='60' height='60' alt='Weather Symbol' />
         </>
     )
+}
+
+const SplitTitle = ({ text }) => {
+    if (text != null || text.length) {
+        return (
+            text.split(' ').map((x, index) => {
+                return (
+                    <>
+                        <div key={index}>
+                            <span style={{ animationDelay: `${0.25 * (index + 1)}s` }}>{x}</span>                        
+                            <span className='divider'> </span>
+                        </div>                        
+                    </>
+                )
+            })
+        )
+    }
+
+    return <></>
 }
 
 export default Header;

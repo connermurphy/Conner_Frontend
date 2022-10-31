@@ -33,7 +33,7 @@ const getBlockComponent = ({ __component, ...rest }, index) => {
             break;
     }
 
-    return Block ? <Block key={`index-${index}`} {...rest} firstSection={index == 0 ? true : false} /> : null;
+    return Block ? <Block key={`index-${index}`} {...rest} firstSection={index == 0 ? true : false} id={`section-${index}`} /> : null;
 };
 
 const BlockManager = ({ blocks }) => {

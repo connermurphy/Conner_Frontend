@@ -112,7 +112,7 @@ function ContactBlock(props) {
     }
 
     return (
-        <section>
+        <section id={props.id}>
             <div className='container tight flex flex-row flex-wrap items-start'>
                 <div className='contact-block__form w-full md:w-1/2 lg:w-2/3 md:pr-6 lg:pr-12 xl:pr-16 pb-8 md:pb-0'>
                     <form onSubmit={handleSubmit}>

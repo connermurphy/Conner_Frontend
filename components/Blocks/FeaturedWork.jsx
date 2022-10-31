@@ -33,16 +33,16 @@ function FeaturedWork(props) {
     }
 
     return (
-        <section>
+        <section id={props.id}>
             <div className='container tight'>
-                <div className='section-header'>
+                <div className='section-header animated remove2animate fadeOnly'>
                     <h2 className='section-header__title'>{props.Intro.Title != null ? props.Intro.Title : ''}</h2>
                 </div>
                 <div className='section-content'>
                     <div className='project-list flex flex-row flex-wrap'>
                         <ProjectList projects={projects} passProject={(e) => showActiveProject(e)} />
                     </div>
-                    <div className='pt-12'>
+                    <div className='pt-12 animated remove2animate fadeOnly'>
                         <Link href='/work'>
                             <a className='btn btn__primary inline-block'>Browse all works</a>
                         </Link>

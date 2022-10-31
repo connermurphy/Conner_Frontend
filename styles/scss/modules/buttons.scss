@@ -24,4 +24,8 @@
             border-color: $lightGrey;
         }
     }
+
+    &:hover {
+        transform: translateY(-4px)
+    }
 }
