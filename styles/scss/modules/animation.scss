@@ -129,3 +129,13 @@
         top: -100%;
     }
 }
+
+@keyframes overflow {
+    0% {
+        overflow: hidden;
+    }
+
+    100% {
+        overflow: auto;
+    }
+}
