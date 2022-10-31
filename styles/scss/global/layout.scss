@@ -141,6 +141,11 @@ footer {
     }
 }
 
+header.site-header + section {
+    opacity: 0;
+    animation: fadeIn .1s 2s ease-in forwards;
+}
+
 body.popup-open {
     overflow: hidden;
 
