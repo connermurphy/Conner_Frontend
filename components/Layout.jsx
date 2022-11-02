@@ -117,7 +117,7 @@ function Layout({ PageComponent, SiteSettings }) {
             </Head>    
             <div className="loader"></div>        
             <div className={`wrapper ${loading ? 'hide' : 'show'}`}>
-                <Menu socials={SiteSettings.Menu != null ? SiteSettings.Menu.Socials : []} />
+                <Menu socials={SiteSettings.Menu != null ? SiteSettings.Menu.Socials : []} contacts={SiteSettings.Menu != null ? SiteSettings.Menu.Contacts : []} />
                 <Nav logo={SiteSettings.Logo} />
                 {PageComponent}
                 <Footer settings={SiteSettings} />

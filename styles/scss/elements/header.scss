@@ -31,7 +31,19 @@
     }
 
     &__location {
-        line-height: 1.25;
+        line-height: 1.25;        
+        max-width: 200px;
+        margin-left: auto;
+
+        @media screen and (min-width: $bpMedium) {
+            max-width: 500px;
+        }
+    }
+
+    &__weather {
+        @media screen and (max-width: #{$bpMedium - 1px}) {
+            @apply w-full;
+        }
     }
 
     &__title {

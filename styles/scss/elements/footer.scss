@@ -9,6 +9,7 @@
             
             width: calc(100% + 2rem);
             margin-left: -1rem;
+            
 
             li {
 
@@ -28,6 +29,9 @@
     }
 
     &__watermark {
+
+        @apply text-right md:text-left;
+
         a {
             transition: color .175s ease-in;
             

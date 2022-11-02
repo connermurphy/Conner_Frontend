@@ -15,17 +15,16 @@ function Nav() {
                         <a className='text-lg'>Conner Murphy</a>
                     </Link>
                 </div>
-                <div className='site-nav__cta hidden md:flex'>
+                <div className='site-nav__cta hidden md:flex pr-6'>
                     <Link href='/contact'>
                         <a className='btn btn__primary'>Get in Touch</a>
                     </Link>
                 </div>
                 <div className='site-nav__toggle'>
                     <button type='button' aria-label='Toggle Navigation' onClick={handleClick}>
-                        <svg width="30" height="20" viewBox="0 0 30 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 1H32" stroke="white" stroke-width="2" />
-                            <path d="M0 9H32" stroke="white" stroke-width="2" />
-                            <path d="M0 17H32" stroke="white" stroke-width="2" />
+                        <svg width="24" height="10" viewBox="0 0 24 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 1H24" stroke="black" stroke-width="2" />
+                            <path d="M0 9H24" stroke="black" stroke-width="2" />
                         </svg>
                     </button>
                 </div>
