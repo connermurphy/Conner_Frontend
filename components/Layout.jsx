@@ -13,8 +13,6 @@ function Layout({ PageComponent, SiteSettings }) {
 
     const [ ogUrl, setOgUrl ] = useState("");
 
-    const [loading, setLoading] = useState(true);        
-
     useEffect(() => {        
 
         if (PageComponent.props.content.Dark) {
@@ -114,9 +112,8 @@ function Layout({ PageComponent, SiteSettings }) {
                 <meta property="twitter:title" content={SiteSettings.Title != null && PageComponent.props.content.SEO != null && PageComponent.props.content.SEO.Title != null ? `${SiteSettings.Title} - ${PageComponent.props.content.SEO.Title}` : "Page Title"} />
                 <meta property="twitter:description" content={`${PageComponent.props.content.SEO != null ? PageComponent.props.content.SEO != null && PageComponent.props.content.SEO.Description : ""}`} />
                 <meta property="twitter:image" content={`${PageComponent.props.content.SEO != null && PageComponent.props.content.SEO.Image != null ? `${process.env.NEXT_PUBLIC_SERVER}${PageComponent.props.content.SEO.Image.url}` : ''}`} />
-            </Head>    
-            <div className="loader"></div>        
-            <div className={`wrapper ${loading ? 'hide' : 'show'}`}>
+            </Head>                
+            <div className={`wrapper`}>
                 <Menu socials={SiteSettings.Menu != null ? SiteSettings.Menu.Socials : []} contacts={SiteSettings.Menu != null ? SiteSettings.Menu.Contacts : []} />
                 <Nav logo={SiteSettings.Logo} />
                 {PageComponent}

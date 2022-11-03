@@ -3,8 +3,6 @@
         > form {
             .input-group {
 
-                @apply pt-4 lg:pt-8;
-                border-top: solid 1px $grey;
 
                 &__header {
                     display: flex;
@@ -40,22 +38,25 @@
 
                 &__field {
 
-                    @apply pt-2;                    
+                    @apply pb-4 lg:pb-8;
 
                     input, textarea {
                         background: transparent;
-                        border-bottom: solid 1px transparent;
+                        border-bottom: solid 1px $grey;
                         outline: none !important;
-                        @apply py-2;
-                        width: 100%;
-                        max-width: 300px;
+                        @apply py-6;
+                        width: 100%;                        
 
-                        &:focus, &.valid {
-                            border-color: $blue;
+                        &:focus {
+                            border-color: $blue !important;
+                        }
+
+                        &.valid {
+                            border-color: $white;
                         }
 
                         &.invalid {
-                            border-color: $red !important;
+                            border-color: $red;
 
                             & + .input-group__validation {
                                 opacity: 1;
@@ -63,8 +64,19 @@
                             }
                         }
 
+                        @media screen and (min-width: 450px) {
+                            padding-left: 30px;
+                        }
+    
+                        @media screen and (min-width: $bpMedium) {
+                            padding-left: calc(30px + 1.5rem);
+                        }
+    
                         @media screen and (min-width: $bpLarge) {
-                            max-width: 80%;
+                        }
+
+                        @media screen and (min-width: $bpLarge) {                            
+                            padding-left: calc(30px + 2rem);
                         }
                     }
                     
@@ -72,8 +84,14 @@
                         resize: vertical;
                         max-height: 300px;
                         min-height: 200px;
-                    } 
+                    }                     
+                }
 
+                &__validation {
+
+                    display: block;
+                    @apply pt-3;     
+                    opacity: 0;   
                     @media screen and (min-width: 450px) {
                         padding-left: 30px;
                     }
@@ -83,15 +101,11 @@
                     }
 
                     @media screen and (min-width: $bpLarge) {
-                        padding-left: calc(30px + 2rem);
                     }
-                }
 
-                &__validation {
-
-                    display: block;
-                    @apply pt-2;     
-                    opacity: 0;                                   
+                    @media screen and (min-width: $bpLarge) {                            
+                        padding-left: calc(30px + 2rem);
+                    }                                
                 }
 
                 &.submit {
@@ -101,10 +115,6 @@
                     button {                        
                         display: inline-block;
                     }
-                }
-
-                & + .input-group {
-                    @apply mt-10;
                 }
 
                 &:last-of-type {
