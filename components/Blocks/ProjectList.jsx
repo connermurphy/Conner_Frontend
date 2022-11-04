@@ -10,16 +10,26 @@ function ProjectList(props) {
 
     useEffect(() => {
 
-        let sortedList = props.Projects.sort((a, b) => {
-            return props.Projects.indexOf(a) % 2 == 0 && (a.Highlight == true || b.Highlight == true);
-        });
+        let normList = props.Projects.filter(x => !x.Highlight);
+        let featuredList = props.Projects.filter(x => x.Highlight);
+        
+        const firstFeatured = featuredList.slice(0, 1)[0];
+        featuredList.splice(0, 1);
 
-        const arrangedList = [...sortedList];
+        for (let i = 2; i < normList.length; i++) {
+            if (i % 2 == 0) {
+                normList.splice(i, 0, featuredList[0]);
+                featuredList.splice(0, 1);
+            }
+        }
 
-        const firstHighlight = sortedList.find(x => x.Highlight == true);
+        normList.unshift(firstFeatured);
 
-        arrangedList.splice(sortedList.findIndex(x => x == firstHighlight), 1);
-        arrangedList.unshift(firstHighlight);        
+        if (featuredList.length) {
+            normList.push(...featuredList);            
+        }
+
+        const arrangedList = [...normList];
 
         setProjects(arrangedList);
 

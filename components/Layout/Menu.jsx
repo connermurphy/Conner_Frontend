@@ -8,9 +8,7 @@ import { useRouter } from 'next/router';
 function Menu({ socials, contacts }) {
 
     const router = useRouter();
-
-
-    console.log(contacts)
+    
     const handleClick = () => {
         document.body.classList.remove('menu-open');
     }
