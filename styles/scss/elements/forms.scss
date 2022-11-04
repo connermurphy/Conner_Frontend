@@ -1,8 +1,24 @@
 .contact-block{
     &__form {
         > form {
-            .input-group {
+            .input-group {                
 
+                .inner {
+                    border-bottom: solid 1px $grey;
+                    @apply pt-4 lg:pt-8;
+                    transition: border-color .15s ease-in;
+
+                    &.invalid {
+
+                        .input-group__validation {
+                            display: block;
+                        }
+                    }
+
+                    &.valid {
+                        border-bottom-color: $blue;
+                    }
+                }
 
                 &__header {
                     display: flex;
@@ -38,12 +54,12 @@
 
                 &__field {
 
-                    @apply pb-4 lg:pb-8;
+                    @apply pb-2;
 
                     input, textarea {
-                        background: transparent;
-                        border-bottom: solid 1px $grey;
+                        background: transparent;                        
                         outline: none !important;
+
                         @apply py-6;
                         width: 100%;                        
 
@@ -89,9 +105,15 @@
 
                 &__validation {
 
-                    display: block;
-                    @apply pt-3;     
-                    opacity: 0;   
+                    display: none;
+                    @apply py-3;     
+
+                    li {
+                        color: $darkRed;
+                        list-style: disc;
+                    }
+
+
                     @media screen and (min-width: 450px) {
                         padding-left: 30px;
                     }
@@ -108,9 +130,14 @@
                     }                                
                 }
 
-                &.submit {
-                    border-bottom: none !important;
+                &.submit {                    
                     text-align: right;
+                    border-bottom: none !important;
+                    @apply pt-4;
+
+                    .inner {
+                        border-bottom: none !important;
+                    }
 
                     button {                        
                         display: inline-block;

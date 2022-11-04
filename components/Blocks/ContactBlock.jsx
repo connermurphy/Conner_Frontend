@@ -117,58 +117,82 @@ function ContactBlock(props) {
                 <div className='contact-block__form w-full md:w-1/2 lg:w-2/3 md:pr-6 lg:pr-12 xl:pr-16 pb-8 md:pb-0'>
                     <form onSubmit={handleSubmit} className='list'>
                         <div className='input-group'>
-                            <div className='input-group__header'>
-                                <span>01</span>
-                                <label for='full_name'>What&apos;s your name</label>
-                            </div>
-                            <div className='input-group__field'>
-                                <input type='text' name='full_name' id='full_name' placeholder='John Doe' value={name} onChange={handleNameChange} className={`${!nameValid && hasSubmitted ? 'invalid' : ''} ${name.length && nameValid ? 'valid' : ''}`} />
-                                <span className='input-group__validation'>Please enter your name!</span>
-                            </div>
-                        </div>
-                        <div className='input-group'>
-                            <div className='input-group__header'>
-                                <span>02</span>
-                                <label for='email'>What&apos;s your email</label>
-                            </div>
-                            <div className='input-group__field'>
-                                <input type='email' name='email' id='email' placeholder='johndoe@mail.com' value={email} onChange={handleEmailChange} className={`${!emailValid && hasSubmitted ? 'invalid' : ''} ${email.length && emailValid ? 'valid' : ''}`} />
-                                <span className='input-group__validation'>Please enter your email!</span>
+                            <div className={`inner  ${!nameValid && hasSubmitted ? 'invalid' : ''} ${name.length && nameValid ? 'valid' : ''}`}>
+                                <div className='input-group__header'>
+                                    <span>01</span>
+                                    <label for='full_name'>What&apos;s your name</label>
+                                </div>
+                                <div className='input-group__field'>
+                                    <input type='text' name='full_name' id='full_name' placeholder='John Doe' value={name} onChange={handleNameChange} />
+                                    <ul className='input-group__validation'>
+                                        <li>Please enter your name!</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div className='input-group'>
-                            <div className='input-group__header'>
-                                <span>03</span>
-                                <label for='company'>What&apos;s the name of your organisation</label>
-                            </div>
-                            <div className='input-group__field'>
-                                <input type='text' name='company' id='company' value={company} onChange={handleCompanyChange} placeholder='XYZ Holdings' />                                
-                            </div>
-                        </div>
-                        <div className='input-group'>
-                            <div className='input-group__header'>
-                                <span>04</span>
-                                <label for='service'>What serivce are you looking for?</label>
-                            </div>
-                            <div className='input-group__field'>
-                                <input type='text' name='service' id='service' placeholder='Web design, Web development, Ecommerce' value={service} onChange={handleServiceChange} className={`${!serviceValid && hasSubmitted ? 'invalid' : ''} ${service.length && serviceValid ? 'valid' : ''}`} />
-                                <span className='input-group__validation'>Please enter the required services!</span>
+                            <div className={`inner  ${!emailValid && hasSubmitted ? 'invalid' : ''} ${email.length && emailValid ? 'valid' : ''}`}>
+                                <div className='input-group__header'>
+                                    <span>02</span>
+                                    <label for='email'>What&apos;s your email</label>
+                                </div>
+                                <div className='input-group__field'>
+                                    <input type='email' name='email' id='email' placeholder='johndoe@mail.com' value={email} onChange={handleEmailChange} />
+                                    <ul className='input-group__validation'>
+                                        <li>Please enter your email!</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div className='input-group'>
-                            <div className='input-group__header'>
-                                <span>05</span>
-                                <label for='message'>Your message</label>
+                            <div className={`inner`}>
+                                <div className='input-group__header'>
+                                    <span>03</span>
+                                    <label for='company'>What&apos;s the name of your organisation</label>
+                                </div>
+                                <div className='input-group__field'>
+                                    <input type='text' name='company' id='company' value={company} onChange={handleCompanyChange} placeholder='XYZ Holdings' />                                
+                                </div>
                             </div>
-                            <div className='input-group__field'>
-                                <textarea name='message' id='message' placeholder='I am looking for my website to be re-designed...' value={message} onChange={handleMessageChange} className={`${!messageValid && hasSubmitted ? 'invalid' : ''} ${message.length && messageValid ? 'valid' : ''}`}></textarea>
-                                <span className='input-group__validation'>Please enter your message!</span>
+                        </div>
+                        <div className='input-group'>
+                            <div className={`inner  ${!serviceValid && hasSubmitted ? 'invalid' : ''} ${service.length && serviceValid ? 'valid' : ''}`}>
+                                <div className='input-group__header'>
+                                    <span>04</span>
+                                    <label for='service'>What serivce are you looking for?</label>
+                                </div>
+                                <div className='input-group__field'>
+                                    <input type='text' name='service' id='service' placeholder='Web design, Web development, Ecommerce' value={service} onChange={handleServiceChange} />
+                                    <ul className='input-group__validation'>
+                                        <li>
+                                            Please enter the required services!
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div className='input-group'>
+                            <div className={`inner  ${!messageValid && hasSubmitted ? 'invalid' : ''} ${message.length && messageValid ? 'valid' : ''}`}>
+                                <div className='input-group__header'>
+                                    <span>05</span>
+                                    <label for='message'>Your message</label>
+                                </div>
+                                <div className='input-group__field'>
+                                    <textarea name='message' id='message' placeholder='I am looking for my website to be re-designed...' value={message} onChange={handleMessageChange}></textarea>
+                                    <ul className='input-group__validation'>
+                                        <li>
+                                            Please enter your message!
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                         <div className='input-group submit'>
-                            <p className={`input-group__status text-left pb-6 ${hasSubmitted && statusMsg.length ? 'block' : 'hidden'}`}>{statusMsg}</p>                           
-                            <div className='input-group__field'>
-                                <button type='submit' class='btn btn__primary'>Send Message</button>
+                            <div className={`inner`}>
+                                <p className={`input-group__status text-left pb-6 ${hasSubmitted && statusMsg.length ? 'block' : 'hidden'}`}>{statusMsg}</p>                           
+                                <div className='input-group__field'>
+                                    <button type='submit' class='btn btn__primary'>Send Message</button>
+                                </div>
                             </div>
                         </div>
                     </form>
