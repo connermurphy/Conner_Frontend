@@ -15,6 +15,8 @@ function Layout({ PageComponent, SiteSettings }) {
 
     useEffect(() => {        
 
+        document.body.classList.remove('menu-open')
+
         if (PageComponent.props.content.Dark) {
             document.documentElement.classList.add('theme-dark')
         } else {
