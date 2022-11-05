@@ -119,7 +119,6 @@ function ContactBlock(props) {
                         <div className='input-group'>
                             <div className={`inner  ${!nameValid && hasSubmitted ? 'invalid' : ''} ${name.length && nameValid ? 'valid' : ''}`}>
                                 <div className='input-group__header'>
-                                    <span>01</span>
                                     <label for='full_name'>What&apos;s your name</label>
                                 </div>
                                 <div className='input-group__field'>
@@ -133,7 +132,6 @@ function ContactBlock(props) {
                         <div className='input-group'>
                             <div className={`inner  ${!emailValid && hasSubmitted ? 'invalid' : ''} ${email.length && emailValid ? 'valid' : ''}`}>
                                 <div className='input-group__header'>
-                                    <span>02</span>
                                     <label for='email'>What&apos;s your email</label>
                                 </div>
                                 <div className='input-group__field'>
@@ -147,7 +145,6 @@ function ContactBlock(props) {
                         <div className='input-group'>
                             <div className={`inner`}>
                                 <div className='input-group__header'>
-                                    <span>03</span>
                                     <label for='company'>What&apos;s the name of your organisation</label>
                                 </div>
                                 <div className='input-group__field'>
@@ -158,7 +155,6 @@ function ContactBlock(props) {
                         <div className='input-group'>
                             <div className={`inner  ${!serviceValid && hasSubmitted ? 'invalid' : ''} ${service.length && serviceValid ? 'valid' : ''}`}>
                                 <div className='input-group__header'>
-                                    <span>04</span>
                                     <label for='service'>What serivce are you looking for?</label>
                                 </div>
                                 <div className='input-group__field'>
@@ -174,7 +170,6 @@ function ContactBlock(props) {
                         <div className='input-group'>
                             <div className={`inner  ${!messageValid && hasSubmitted ? 'invalid' : ''} ${message.length && messageValid ? 'valid' : ''}`}>
                                 <div className='input-group__header'>
-                                    <span>05</span>
                                     <label for='message'>Your message</label>
                                 </div>
                                 <div className='input-group__field'>

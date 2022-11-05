@@ -4,7 +4,6 @@
             .input-group {                
 
                 .inner {
-                    border-bottom: solid 1px $grey;
                     @apply pt-4 lg:pt-8;
                     transition: border-color .15s ease-in;
 
@@ -13,10 +12,20 @@
                         .input-group__validation {
                             display: block;
                         }
+
+                        .input-group__field {
+                            input,textarea {
+                                border-color: $darkRed;
+                            }
+                        }
                     }
 
                     &.valid {
-                        border-bottom-color: $blue;
+                        .input-group__field {
+                            input,textarea {
+                                border-color: $blue;
+                            }
+                        }
                     }
                 }
 
@@ -24,6 +33,7 @@
                     display: flex;
                     flex-direction: row;
                     align-items: flex-start;
+                    @apply pb-4 md:pb-6;
 
                     span {
                         color: $grey;
@@ -33,9 +43,7 @@
                     }
 
                     label {
-                        @apply text-lg;
-                        @apply md:pl-6 lg:pl-8 #{!important};
-                        top: -4px;
+                        @apply text-lg;                        
                         @apply w-full;
                     }
 
@@ -46,8 +54,7 @@
                         }
 
                         label {
-                            flex: 0 1 auto;
-                            @apply pt-0 pl-4;
+                            flex: 0 1 auto;                            
                         }
                     }
                 }
@@ -57,11 +64,13 @@
                     @apply pb-2;
 
                     input, textarea {
-                        background: transparent;                        
+                        background: #2F2F33;                        
                         outline: none !important;
-
-                        @apply py-6;
-                        width: 100%;                        
+                        border-radius: 8px;
+                        border: solid 1px #6D6D73;
+                        @apply py-4 px-6;
+                        width: 100%;               
+                        @apply text-md;        
 
                         &:focus {
                             border-color: $blue !important;
@@ -79,21 +88,7 @@
                                 color: $red;
                             }
                         }
-
-                        @media screen and (min-width: 450px) {
-                            padding-left: 30px;
-                        }
-    
-                        @media screen and (min-width: $bpMedium) {
-                            padding-left: calc(30px + 1.5rem);
-                        }
-    
-                        @media screen and (min-width: $bpLarge) {
-                        }
-
-                        @media screen and (min-width: $bpLarge) {                            
-                            padding-left: calc(30px + 2rem);
-                        }
+                      
                     }
                     
                     textarea {
@@ -106,28 +101,13 @@
                 &__validation {
 
                     display: none;
-                    @apply py-3;     
+                    @apply pt-3;  
 
                     li {
                         color: $darkRed;
-                        list-style: disc;
+                        list-style-position: inside;
                     }
-
-
-                    @media screen and (min-width: 450px) {
-                        padding-left: 30px;
-                    }
-
-                    @media screen and (min-width: $bpMedium) {
-                        padding-left: calc(30px + 1.5rem);
-                    }
-
-                    @media screen and (min-width: $bpLarge) {
-                    }
-
-                    @media screen and (min-width: $bpLarge) {                            
-                        padding-left: calc(30px + 2rem);
-                    }                                
+                               
                 }
 
                 &.submit {                    
