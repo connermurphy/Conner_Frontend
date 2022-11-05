@@ -4,11 +4,9 @@ export default async function handler(req, res) {
   if (req.method == "POST") {
     const API_KEY = process.env.PANEL_API_KEY;
 
-    const formResponse = {};
-
     const { name, email, company, service, message } = req.body;
 
-    return new Promise((resolve, reject) => {
+    const response = new Promise((resolve, reject) => {
       axios({
         url: `${process.env.API_SERVER}/create-form-submission`,
         method: "POST",
@@ -24,14 +22,18 @@ export default async function handler(req, res) {
           "Content-Type": "application/json",
         },
       })
-        .then((result) => {
-          formResponse.message = result.data.message;
-          res.status(200).json(formResponse);
+        .then(result => {          
+          resolve(result);
         })
-        .catch((err) => {
-          formResponse.message = result.data.message;
-          res.status(500).json(formResponse);
+        .catch(err => {          
+          reject(err);
         });
     });
+
+    return response.then(_ => {      
+        return res.status(200).json({ 'message': 'Success' });
+    }).catch(err => {      
+        return res.status(500).json({ 'message': 'Failed' });
+    })
   }
 }

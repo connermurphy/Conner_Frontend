@@ -85,7 +85,6 @@ function ContactBlock(props) {
                 },
                 method: 'POST'
             }).then(res => {
-                setStatusMsg(res.data.message);
 
                 setHasSubmitted(false);
 
@@ -102,10 +101,14 @@ function ContactBlock(props) {
                 setServiceValid(false)
 
                 setMessage('');
-                setMessageValid(false);                
+                setMessageValid(false);  
 
-            }).catch(err => {
-                setStatusMsg(res.data.message)
+                setStatusMsg('Email sent. I\'ll be in touch');
+                        
+
+            }).catch(err => {                
+                console.log(err)
+                setStatusMsg('Error. Please try again later!');
             });
 
         }
@@ -184,7 +187,7 @@ function ContactBlock(props) {
                         </div>
                         <div className='input-group submit'>
                             <div className={`inner`}>
-                                <p className={`input-group__status text-left pb-6 ${hasSubmitted && statusMsg.length ? 'block' : 'hidden'}`}>{statusMsg}</p>                           
+                                <p className={`input-group__status text-left pb-6 text-md ${statusMsg.length ? 'block' : 'hidden'}`}>{statusMsg}</p>                           
                                 <div className='input-group__field'>
                                     <button type='submit' class='btn btn__primary'>Send Message</button>
                                 </div>
