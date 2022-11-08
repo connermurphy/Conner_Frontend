@@ -18,11 +18,11 @@ function ProjectList(props) {
 
         for (let i = 2; i < normList.length; i++) {
             if (i % 2 == 0) {
-                normList.splice(i, 0, featuredList[0]);
+                if (featuredList[0] != null || featuredList[0] != undefined) normList.splice(i, 0, featuredList[0]);
                 featuredList.splice(0, 1);
             }
         }
-
+        
         normList.unshift(firstFeatured);
 
         if (featuredList.length) {
@@ -31,7 +31,7 @@ function ProjectList(props) {
 
         const arrangedList = [...normList];
 
-        setProjects(arrangedList);
+        setProjects(arrangedList);        
 
     }, [props.Projects, activeProject]);
 
