@@ -13,16 +13,23 @@ body {
     font-size: 16px;
     @extend .neue-medium;
     color: $black;
+
+    @media screen and (min-width: 1700px) {
+        font-size: 22px;
+    }
 }
 
 .container {
-    max-width: 1300px;
+    width: 100vw;
     margin: 0 auto;
-    @apply px-4 md:px-6 lg:px-10;
+    @apply px-4 md:px-6 lg:px-16 xl:px-32 2xl:px-40;
 
     &.tight {
-        max-width: 1100px;
+        width: 100vw;
+        @apply 2xl:px-60;
     }
+
+    max-width: 3000px;
 }
 
 section {
