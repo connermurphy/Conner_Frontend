@@ -28,6 +28,10 @@
             animation-delay: inherit;
         }
         
+        @media screen and (min-width: 2000px) {
+            height: 500px;
+            @apply w-[800px];
+        }
     }
 
     &__location {
