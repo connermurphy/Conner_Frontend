@@ -38,6 +38,10 @@
         @media screen and (min-width: $bpMedium) {
             max-width: 500px;
         }
+
+        @media screen and (min-width: 2000px) {
+            max-width: 40vw;
+        }
     }
 
     &__weather {
@@ -74,6 +78,11 @@
     &__summary {
         animation: fadeIn .5s cubic-bezier(0.7, 0.6, 0, 1) forwards;
         opacity: 0;
+        max-width: 350px;
+
+        @media screen and (min-width: 2000px) {
+            max-width: 20vw;
+        }
     }
 
     &__footer {

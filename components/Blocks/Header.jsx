@@ -12,7 +12,7 @@ function Header(props) {
                 <h1 className='site-header__title w-full md:w-[60%] lg:w-[45%] md:pr-8 lg:pr-16'>
                     <SplitTitle text={props.Title} />
                 </h1>
-                <p className='site-header__summary text-md w-full md:w-auto md:flex-1 lg:pl-8 max-w-[350px] md:ml-auto pt-4 md:pt-0' style={{ animationDelay: `${props.Title.split(' ').length * .5}s` }}>
+                <p className='site-header__summary text-md w-full md:w-auto md:flex-1 lg:pl-8 md:ml-auto pt-4 md:pt-0' style={{ animationDelay: `${props.Title.split(' ').length * .5}s` }}>
                     <Markdown>
                         {
                             props.Summary != null ? props.Summary : ''

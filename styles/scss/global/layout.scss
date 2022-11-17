@@ -14,7 +14,7 @@ body {
     @extend .neue-medium;
     color: $black;
 
-    @media screen and (min-width: 1700px) {
+    @media screen and (min-width: 2000px) {
         font-size: 22px;
     }
 }
@@ -29,7 +29,6 @@ body {
         @apply 2xl:px-60;
     }
 
-    max-width: 3000px;
 }
 
 section {
