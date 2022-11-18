@@ -12,7 +12,7 @@ function AboutBlock(props) {
                 <div className='section-content'>
                     <div className='split-block flex flex-row flex-wrap lg:justify-between'>
                         <div className='split-block__text w-full md:w-1/2 lg:w-1/2 md:pr-6 lg:pr-10 pb-8 md:pb-0'>
-                            <h4 className='pb-4 text-lg animated remove2animate fadeOnly'>About</h4>
+                            <h3 className='pb-4 text-lg animated remove2animate fadeOnly'>About</h3>
                             <p className='text-lg animated remove2animate fadeOnly'>{props.Bio != null ? props.Bio : ''}</p>
                             <div className='inline-block animated remove2animate fadeOnly'>
                                 <Link href='/contact'>
@@ -22,7 +22,7 @@ function AboutBlock(props) {
                         </div>
                         <div className='split-block__socials w-full md:w-1/2 lg:w-1/3 md:pl-6 lg:pl-10 flex md:justify-end'>
                             <div>
-                                <h4 className='pb-4 text-lg remove2animate fadeOnly'>Socials</h4>
+                                <h3 className='pb-4 text-lg remove2animate fadeOnly'>Socials</h3>
                                 <SocialList socials={props.Socials} animate={true} />
                             </div>
                         </div>
