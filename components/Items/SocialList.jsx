@@ -13,7 +13,7 @@ function SocialList({ socials, animate = false }) {
                         return (
                             <li key={index}>
                                 <Link href={item.Link != null ? item.Link : '#'} target='_blank' rel='noreferrer'>
-                                    <a aria-label={`Link to ${item.Link}`}>
+                                    <a aria-label={item.Link != null ? `Link to ${item.Link}` : ''}>
                                         <Markdown>{item.FontAwesome != '' || item.FontAwesome != null ? item.FontAwesome : ''}</Markdown>
                                     </a>
                                 </Link>
