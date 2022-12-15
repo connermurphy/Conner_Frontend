@@ -30,8 +30,8 @@ function Menu({ socials, contacts }) {
                     <div className='menu-header__toggle'>
                         <button type='button' aria-label='Toggle Navigation' onClick={handleClick}>
                             <svg width="30" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M18 2L2 18" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
-                                <path d="M2 2L18 18" stroke="black" stroke-width="2" stroke-linecap="square" stroke-linejoin="round" />
+                                <path d="M18 2L2 18" stroke="black" stroke-width="2" stroke-linecap="square" strokeLinejoin="round" />
+                                <path d="M2 2L18 18" stroke="black" stroke-width="2" stroke-linecap="square" strokeLinejoin="round" />
                             </svg>
 
                         </button>
