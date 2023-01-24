@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { createRef, useEffect, useState } from 'react';
 
 import Link from 'next/link';
 
@@ -6,6 +6,8 @@ import ProjectCard from '../Items/ProjectCard';
 import ProjectPopup from '../Items/ProjectPopup';
 
 function FeaturedWork(props) {
+
+    const sectionRef = createRef();
 
     const [projects, setProjects] = useState([]);
     const [ activeProject, setActiveProject ] = useState({});
@@ -39,11 +41,12 @@ function FeaturedWork(props) {
 
     const showActiveProject = (proj) => {
         setActiveProject(proj);
-        document.body.classList.add('popup-open')
+        document.body.classList.add('popup-open');
+        sectionRef.current.classList.add('z-1');
     }
 
     return (
-        <section id={props.id}>
+        <section id={props.id} ref={sectionRef}>
             <div className='container tight'>
                 <div className='section-header animated remove2animate fadeOnly'>
                     <h2 className='section-header__title'>{props.Intro.Title != null ? props.Intro.Title : ''}</h2>

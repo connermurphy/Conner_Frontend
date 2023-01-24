@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React, { createRef, useEffect, useState } from 'react';
 
 import ProjectCard from '../Items/ProjectCard';
 import ProjectPopup from '../Items/ProjectPopup';
 
 function ProjectList(props) {
+
+    const sectionRef = createRef();
 
     const [projects, setProjects] = useState([]);
     const [activeProject, setActiveProject] = useState({});
@@ -37,11 +39,12 @@ function ProjectList(props) {
 
     const showActiveProject = (proj) => {
         setActiveProject(proj);
-        document.body.classList.add('popup-open')
+        document.body.classList.add('popup-open');
+        sectionRef.current.classList.add('z-1');
     }
 
     return (
-        <section id={props.id}>
+        <section id={props.id} ref={sectionRef}>
             <div className='container tight'>
                 <div className='section-content'>
                     <div className='project-list flex flex-row flex-wrap'>
