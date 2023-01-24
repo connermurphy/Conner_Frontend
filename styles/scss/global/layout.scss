@@ -37,7 +37,7 @@ body {
 
 section {
 
-    z-index: -1;
+    z-index: 0;
 
     .container {
         @apply py-16 lg:py-24 xl:py-[7rem];
@@ -164,10 +164,14 @@ body.popup-open {
 
     .project-popup {
         opacity: 1;
-        pointer-events: all;
+        pointer-events: all;        
         
         &__inner {
             right: 0;
         }
+    }
+
+    section {
+        z-index: -1;
     }
 }
