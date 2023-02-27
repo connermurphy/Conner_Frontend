@@ -102,7 +102,7 @@ function Layout({ PageComponent, SiteSettings }) {
                 - {PageComponent.props.content.SEO != null && PageComponent.props.content.SEO.Title != null ? PageComponent.props.content.SEO.Title : ""}
                 <meta name="title" content={SiteSettings.Title != null && PageComponent.props.content.SEO != null && PageComponent.props.content.SEO.Title != null ? `${SiteSettings.Title} - ${PageComponent.props.content.SEO.Title}` : "Page Title"} />
                 <meta name="description" content={`${PageComponent.props.content.SEO != null && PageComponent.props.content.SEO.Description != null ? PageComponent.props.content.SEO.Description : ""}`} />
-                <meta name="keywords" content='web developer glasgow, websites glasgow, ayrshire web design, glasgow web design' />
+                <meta name="keywords" content='Glasgow web development, Glasgow website developer, Website design Glasgow, Affordable website development Glasgow' />
 
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={ogUrl} />
