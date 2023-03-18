@@ -22,7 +22,13 @@ function Header(props) {
                 {
                     props.Image != null ? <div className='w-full pt-6 md:pt-8 lg:pt-12'>
                         <figure className='site-header__image' style={{ animationDelay: `${props.Title.split(' ').length * .35}s` }}>
-                            <Image src={`${process.env.NEXT_PUBLIC_SERVER}${[props.Image.url]}`} priority='true' alt='Alt Text' layout='fill' />
+                            <Image 
+                                src={`${process.env.NEXT_PUBLIC_SERVER}${[props.Image.url]}`} 
+                                priority='true' 
+                                alt='Alt Text' 
+                                placeholder={props.Image.placeholder != null ? 'blur' : 'empty'}
+                                blurDataURL={props.Image.placeholder != null ? props.Image.placeholder : ''}
+                                layout='fill' />
                         </figure>                 
                     </div> : <></>
                 }

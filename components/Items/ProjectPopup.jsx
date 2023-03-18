@@ -112,7 +112,12 @@ const ProjectCarousel = ({ slides }) => {
                             return (
                                 <div className='project-carousel__slide' key={index}>
                                     <figure>
-                                        <Image src={`${process.env.NEXT_PUBLIC_SERVER}${x.url}`} alt='Alt Text' layout='fill' />
+                                        <Image 
+                                            src={`${process.env.NEXT_PUBLIC_SERVER}${x.url}`} 
+                                            placeholder={x.placeholder != null ? 'blur' : 'empty'}
+                                            blurDataURL={x.placeholder != null ? x.placeholder : ''}
+                                            alt='Alt Text' 
+                                            layout='fill' />
                                     </figure>
                                 </div>
                             )

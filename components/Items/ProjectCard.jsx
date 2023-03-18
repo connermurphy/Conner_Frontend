@@ -13,7 +13,12 @@ function ProjectCard({ props, index, showActiveProject }) {
             <div className='project-card__inner' onClick={showActiveProject}>
                 <div className='project-card__image'>
                     <figure>
-                        <Image src={`${process.env.NEXT_PUBLIC_SERVER}${props.Images[0].url}`} layout='fill' alt='Alt Text' />
+                        <Image 
+                            src={`${process.env.NEXT_PUBLIC_SERVER}${props.Images[0].url}`} 
+                            placeholder={props.Images[0].placeholder != null ? 'blur' : 'empty'}
+                            blurDataURL={props.Images[0].placeholder != null ? props.Images[0].placeholder : ''}
+                            layout='fill' 
+                            alt='Alt Text' />
                     </figure>
                 </div>
                 <div className='project-card__text'>
