@@ -15,8 +15,8 @@ function AboutBlock(props) {
                             <h3 className='pb-4 text-lg animated remove2animate fadeOnly'>About</h3>
                             <p className='text-lg animated remove2animate fadeOnly'>{props.Bio != null ? props.Bio : ''}</p>
                             <div className='inline-block animated remove2animate fadeOnly'>
-                                <Link href='/contact'>
-                                    <a className='btn btn__primary mt-8 lg:mt-12 hidden md:inline-block'>Let&apos;s Talk</a>
+                                <Link href='/contact' className='btn btn__primary mt-8 lg:mt-12 hidden md:inline-block'>
+                                    Let&apos;s Talk
                                 </Link>
                             </div>
                         </div>
@@ -27,8 +27,8 @@ function AboutBlock(props) {
                             </div>
                         </div>
                         <div className='inline-block animated remove2animate fadeOnly'>
-                            <Link href='/contact'>
-                                    <a className='btn btn__primary mt-10 inline-block md:hidden'>Let&apos;s Talk</a>
+                            <Link href='/contact' className='btn btn__primary mt-10 inline-block md:hidden'>
+                                Let&apos;s Talk
                             </Link>
                         </div>
                     </div>

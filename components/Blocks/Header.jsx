@@ -28,7 +28,7 @@ function Header(props) {
                                 alt='Alt Text' 
                                 placeholder={props.Image.placeholder != null ? 'blur' : 'empty'}
                                 blurDataURL={props.Image.placeholder != null ? props.Image.placeholder : ''}
-                                layout='fill' />
+                                fill />
                         </figure>                 
                     </div> : <></>
                 }

@@ -14,8 +14,8 @@ function CTABanner(props) {
                         {
                             props.Button != null ? 
                             <div className='inline-block'  style={{ transitionDelay: `${props.Title.split(' ').length * .5}s` }}>
-                                <Link href={props.Button.Link}>
-                                    <a className='btn btn__primary mt-8 inline-block'>{props.Button.Label}</a>
+                                <Link href={props.Button.Link} className='btn btn__primary mt-8 inline-block'>
+                                    {props.Button.Label}
                                 </Link>
                             </div> : <></>
                         }

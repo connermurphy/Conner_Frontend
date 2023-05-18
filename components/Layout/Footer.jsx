@@ -9,7 +9,7 @@ function Footer({ settings }) {
                     <FooterLinks links={settings.Footer.Links != null ? settings.Footer.Links : []} />
                 </div>
                 <div className='site-footer__watermark w-full md:w-1/2 md:pl-6 lg:pl-12 md:text-right'>
-                    <p>Designed by <Link href='https://www.cameronwattdesign.com/'><a target='_blank' rel='noreferrer'>Cameron Watt</a></Link></p>
+                    <p>Designed by <Link href='https://www.cameronwattdesign.com/' target='_blank' rel='noreferrer'>Cameron Watt</Link></p>
                 </div>
             </div>
         </footer>                
@@ -25,7 +25,7 @@ const FooterLinks = ({ links }) => {
                         return (
                             <li key={index}>
                                 <Link href={link.URL}>
-                                    <a>{link.Label}</a>
+                                    {link.Label}
                                 </Link>
                             </li>
                         )

@@ -12,10 +12,8 @@ function SocialList({ socials, animate = false }) {
                     socials.map((item, index) => {
                         return (
                             <li key={index}>
-                                <Link href={item.Link != null ? item.Link : '#'} target='_blank' rel='noreferrer'>
-                                    <a aria-label={item.Link != null ? `Link to ${item.Link}` : ''}>
-                                        <Markdown>{item.FontAwesome != '' || item.FontAwesome != null ? item.FontAwesome : ''}</Markdown>
-                                    </a>
+                                <Link href={item.Link != null ? item.Link : '#'} target='_blank' rel='noreferrer' aria-label={item.Link != null ? `Link to ${item.Link}` : ''}>
+                                    <Markdown>{item.FontAwesome != '' || item.FontAwesome != null ? item.FontAwesome : ''}</Markdown>
                                 </Link>
                             </li>
                         )

@@ -56,8 +56,8 @@ function FeaturedWork(props) {
                         <ProjectList projects={projects} passProject={(e) => showActiveProject(e)} />
                     </div>
                     <div className='pt-12 animated remove2animate'>
-                        <Link href='/work'>
-                            <a className='btn btn__primary inline-block'>Browse all works</a>
+                        <Link href='/work' className='btn btn__primary inline-block'>
+                            Browse all works
                         </Link>
                     </div>
                 </div>

@@ -18,13 +18,13 @@ function Menu({ socials, contacts }) {
             <div className='h-full flex flex-col'>
                 <div className='site-menu__header flex flex-row items-center justify-between'>
                     <div className='menu-header__brand  pr-4 md:pr-8 lg:pr-12'>
-                        <Link href='/'>
-                            <a className='text-lg'>Conner Murphy</a>
+                        <Link href='/' className='text-lg'>
+                            Conner Murphy
                         </Link>
                     </div>
                     <div className='menu-header__cta hidden md:flex invisible'>
-                        <Link href='/contact'>
-                            <a className='btn btn__primary'>Get in Touch</a>
+                        <Link href='/contact' className='btn btn__primary'>
+                            Get in Touch
                         </Link>
                     </div>
                     <div className='menu-header__toggle'>
@@ -43,13 +43,13 @@ function Menu({ socials, contacts }) {
                             <ul>
                                 <li className={`${router.pathname === '/' ? 'active' : ''}`}>                                 
                                     <Link href='/'>                                        
-                                        <a>Home</a>
+                                        Home
                                     </Link>
                                     <span>01</span>
                                 </li>
                                 <li className={`${router.pathname === '/work' ? 'active' : ''}`}>                                    
                                     <Link href='/work'>
-                                        <a>Work</a>
+                                        Work
                                     </Link>
                                     <span>02</span>
                                 </li>

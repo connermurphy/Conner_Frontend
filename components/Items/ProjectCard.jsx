@@ -17,7 +17,7 @@ function ProjectCard({ props, index, showActiveProject }) {
                             src={`${process.env.NEXT_PUBLIC_SERVER}${props.Images[0].url}`} 
                             placeholder={props.Images[0].placeholder != null ? 'blur' : 'empty'}
                             blurDataURL={props.Images[0].placeholder != null ? props.Images[0].placeholder : ''}
-                            layout='fill' 
+                            fill
                             alt='Alt Text' />
                     </figure>
                 </div>

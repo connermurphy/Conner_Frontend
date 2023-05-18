@@ -70,8 +70,8 @@ function ProjectPopup({ project }) {
                         {
                             project.Link != null ?
                             <div>
-                                <Link href={project.Link}>
-                                    <a className='btn btn__primary inline-block' target='_blank'>View Site</a>
+                                <Link href={project.Link} className='btn btn__primary inline-block' target='_blank'>
+                                    View Site
                                 </Link>
                             </div> : <></>
                         }                        
@@ -117,7 +117,7 @@ const ProjectCarousel = ({ slides }) => {
                                             placeholder={x.placeholder != null ? 'blur' : 'empty'}
                                             blurDataURL={x.placeholder != null ? x.placeholder : ''}
                                             alt='Alt Text' 
-                                            layout='fill' />
+                                            fill />
                                     </figure>
                                 </div>
                             )

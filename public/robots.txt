@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://connermurphy.net
+
+# Sitemaps
+Sitemap: https://connermurphy.net/sitemap.xml
