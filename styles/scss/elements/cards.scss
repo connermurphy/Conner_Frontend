@@ -51,7 +51,6 @@
         @apply w-full;
 
         h3 {
-            @extend .neue-medium;
             @apply text-xl lg:text-2xl;
             @apply py-4;
         }

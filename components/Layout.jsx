@@ -7,6 +7,8 @@ import Nav from "./Layout/Nav";
 import Footer from "./Layout/Footer";
 import Menu from "./Layout/Menu";
 
+import { neueFont } from "../utils/font";
+
 function Layout({ PageComponent, SiteSettings }) {
 
     const router = useRouter();
@@ -116,7 +118,7 @@ function Layout({ PageComponent, SiteSettings }) {
                 <meta property="twitter:description" content={`${PageComponent.props.content.SEO != null ? PageComponent.props.content.SEO != null && PageComponent.props.content.SEO.Description : ""}`} />
                 <meta property="twitter:image" content={`${PageComponent.props.content.SEO != null && PageComponent.props.content.SEO.Image != null ? `${process.env.NEXT_PUBLIC_SERVER}${PageComponent.props.content.SEO.Image.url}` : ''}`} />
             </Head>                
-            <div className={`wrapper`}>
+            <div className={`wrapper ${neueFont.className}`}>
                 <Menu socials={SiteSettings.Menu != null ? SiteSettings.Menu.Socials : []} contacts={SiteSettings.Menu != null ? SiteSettings.Menu.Contacts : []} />
                 <Nav logo={SiteSettings.Logo} />
                 {PageComponent}
