@@ -1,9 +1,15 @@
 import Link from 'next/link';
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 function Footer({ settings }) {
     return (
-        <footer className='site-footer animated remove2animate fadeOnly'>
+        <motion.footer className='site-footer'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+        transition={{ delay: .125 }}>
             <div className='container flex flex-row flex-wrap items-center'>
                 <div className='site-footer__links w-full md:w-1/2 md:pr-6 lg:pr-12 pb-6 md:pb-0'>
                     <FooterLinks links={settings.Footer.Links != null ? settings.Footer.Links : []} />
@@ -12,7 +18,7 @@ function Footer({ settings }) {
                     <p>Designed by <Link href='https://www.cameronwattdesign.com/' target='_blank' rel='noreferrer'>Cameron Watt</Link></p>
                 </div>
             </div>
-        </footer>                
+        </motion.footer>                
     );
 }
 

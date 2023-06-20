@@ -48,14 +48,14 @@ function FeaturedWork(props) {
     return (
         <section id={props.id} ref={sectionRef}>
             <div className='container tight'>
-                <div className='section-header animated remove2animate fadeOnly'>
+                <div className='section-header animated'>
                     <h2 className='section-header__title'>{props.Intro.Title != null ? props.Intro.Title : ''}</h2>
                 </div>
                 <div className='section-content'>
                     <div className='project-list flex flex-row flex-wrap'>
                         <ProjectList projects={projects} passProject={(e) => showActiveProject(e)} />
                     </div>
-                    <div className='pt-12 animated remove2animate'>
+                    <div className='pt-12'>
                         <Link href='/work' className='btn btn__primary inline-block'>
                             Browse all works
                         </Link>

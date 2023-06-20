@@ -6,7 +6,7 @@ function CTABanner(props) {
     return (
         <section id={props.id}>
             <div className='container'>
-                <div className='cta-banner remove2animate'>
+                <div className='cta-banner'>
                     <div className='text-center'>
                         <h2>
                             <SplitTitle text={props.Title} />

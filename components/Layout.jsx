@@ -19,77 +19,7 @@ function Layout({ PageComponent, SiteSettings }) {
 
         document.body.classList.remove('menu-open')
 
-        if (PageComponent.props.content.Dark) {
-            document.documentElement.classList.add('theme-dark')
-        } else {
-            document.documentElement.classList.remove('theme-dark')
-        }
-
-        const animateList = () => {
-            const animCallback = (items, observer) => {
-                items.forEach((item, index) => {
-                    if (item.isIntersecting && !item.target.classList.contains("visible")) {
-                        item.target.classList.add("visible");
-                        item.target.style.transitionDelay = `${index / 10}s`;
-                    }
-                })
-            }
-        
-            const listObserver = new IntersectionObserver(animCallback, {
-                rootMargin: "-20px"
-            });
-        
-            for (let i = 0; i < document.querySelectorAll(".list").length; i++) {
-                const items = document.querySelectorAll(".list")[i].children;
-    
-                for (let el of items) {
-                    listObserver.observe(el)                    
-                }
-            }
-        }
-    
-        const observeAnimations = () => {
-            if ('IntersectionObserver' in window) {
-    
-                var animatedElements = document.querySelectorAll('.remove2animate');
-        
-                var animationObserver = new IntersectionObserver(function (animatedElements) {
-        
-                    for (var i = 0; i < animatedElements.length; i++) {
-
-                        var scope = animatedElements[i].target;
-        
-                        if (animatedElements[i]['isIntersecting'] === true) { //when element comes into viewport
-        
-                            //bump in sections
-                            if (scope.classList.contains('remove2animate')) {
-                                scope.classList.remove('remove2animate');
-                            }
-        
-                            if (scope.classList.contains('remove2zoom')) {
-                                scope.classList.remove('remove2zoom')
-                            }
-        
-                            //once element is in view, we don't have to observe it anymore
-                            animationObserver.unobserve(animatedElements[i].target);
-                        }
-                    }
-        
-                }, { rootMargin: '-50px' }); //show element when 50px is within viewport
-        
-                //init observer on all animatable elements
-                for (var i = 0; i < animatedElements.length; i++) {
-                    animationObserver.observe(animatedElements[i]);
-                }
-        
-                animateList();
-        
-            }
-        }
-
         setOgUrl(`${window.location.protocol}//${window.location.host}${router.asPath}`);
-
-        observeAnimations();
 
     }, [router, PageComponent.props.content.Dark])
 

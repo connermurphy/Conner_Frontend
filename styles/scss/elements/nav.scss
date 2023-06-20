@@ -1,7 +1,5 @@
 .site-nav {
     @apply pt-6;
-    animation: fadeIn 0.25s cubic-bezier(0.7, 0.6, 0, 1) forwards;
-    opacity: 0;
 
     .container {
         background: $black;

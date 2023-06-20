@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 
 import Image from 'next/image';
 import SkillList from './SkillList';
@@ -6,10 +6,9 @@ import SkillList from './SkillList';
 function ProjectCard({ props, index, showActiveProject }) {
 
     const ref = useRef();
-    useOnScreen(ref);
 
     return (
-        <div className={`project-card ${props.Highlight ? 'project-card--featured' : ''} animated remove2animate`} ref={ref} style={{ transitionDelay: `${.25 * index}s` }}>
+        <div className={`project-card ${props.Highlight ? 'project-card--featured' : ''}`} ref={ref} style={{ transitionDelay: `${.25 * index}s` }}>
             <div className='project-card__inner' onClick={showActiveProject}>
                 <div className='project-card__image'>
                     <figure>
@@ -28,29 +27,6 @@ function ProjectCard({ props, index, showActiveProject }) {
             </div>
         </div>
     );
-}
-
-export function useOnScreen(ref) {
-
-    const [isIntersecting, setIntersecting] = useState(false)
-
-    const observer = useMemo(() => new IntersectionObserver(
-        ([entry]) => setIntersecting(entry.isIntersecting)
-    ), [])
-
-    useEffect(() => {
-        observer.observe(ref.current);
-
-        if (isIntersecting) {
-            ref.current.classList.remove('remove2animate');
-            observer.unobserve(ref.current);
-        }
-
-        // Remove the observer as soon as the component is unmounted
-        return () => { observer.disconnect() }
-    }, [observer, ref, isIntersecting])
-
-    return isIntersecting
 }
 
 export default ProjectCard;

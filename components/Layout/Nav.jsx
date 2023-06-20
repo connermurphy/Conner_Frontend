@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 function Nav() {
 
     const handleClick = () => {
@@ -8,7 +10,10 @@ function Nav() {
     }
 
     return (
-        <nav className='site-nav px-4 md:px-6 lg:px-10'>
+        <motion.nav className='site-nav px-4 md:px-6 lg:px-10'
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}>
             <div className='container flex flex-row items-center'>
                 <div className='site-nav__brand pr-4 md:pr-8 lg:pr-12'>
                     <Link href='/' className='text-lg'>
@@ -29,7 +34,7 @@ function Nav() {
                     </button>
                 </div>
             </div>
-        </nav>
+        </motion.nav>
     );
 }
 
