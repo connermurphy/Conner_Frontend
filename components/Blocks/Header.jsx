@@ -28,8 +28,9 @@ function Header(props) {
                                 alt='Alt Text' 
                                 placeholder={props.Image.placeholder != null ? 'blur' : 'empty'}
                                 blurDataURL={props.Image.placeholder != null ? props.Image.placeholder : ''}
-                                width={300}
-                                height={200} />
+                                width={275}
+                                height={275}
+                                quality={100} />
                         </figure>                 
                     </div> : <></>
                 }
@@ -61,21 +62,21 @@ const WeatherDisplay = () => {
         fetch('/api/weather')
             .then(res => res.json())
             .then(data => {
-                setWeather(data)
+                setWeather(data);
+
+                let currentTime = data.dt;
+
+                let date = new Date();
+                let hours = date.getHours();
+                let minutes = date.getMinutes();
+                let ampm = hours >= 12 ? 'pm' : 'am';
+                hours = hours % 12;
+                hours = hours ? hours : 12;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                currentTime = hours + ':' + minutes + ' ' + ampm;
+        
+                setTime(currentTime);
             });
-
-        let currentTime = 0;
-
-        let date = new Date();
-        let hours = date.getHours();
-        let minutes = date.getMinutes();
-        let ampm = hours >= 12 ? 'pm' : 'am';
-        hours = hours % 12;
-        hours = hours ? hours : 12;
-        minutes = minutes < 10 ? '0' + minutes : minutes;
-        currentTime = hours + ':' + minutes + ' ' + ampm;
-
-        setTime(currentTime)
         
     }
 

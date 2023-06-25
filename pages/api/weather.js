@@ -13,9 +13,10 @@ export default async function handler(req, res) {
             url: `https://api.openweathermap.org/data/2.5/weather?lat=55.8734422&lon=-4.2892846&exclude={part}&appid=${API_KEY}`
         }).then(result => {
             
-            const { weather, main } = result.data;
+            const { weather, dt } = result.data;
         
             weatherResponse.icon = `http://openweathermap.org/img/wn/${weather[0].icon}@2x.png`;
+            weatherResponse.time = dt;
 
             res.status(200).json(weatherResponse);
             resolve();
