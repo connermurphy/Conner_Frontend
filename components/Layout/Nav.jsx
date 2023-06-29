@@ -28,8 +28,8 @@ function Nav() {
                 <div className='site-nav__toggle'>
                     <button type='button' aria-label='Toggle Navigation' onClick={handleClick}>
                         <svg width="24" height="10" viewBox="0 0 24 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0 1H24" stroke="black" stroke-width="2" />
-                            <path d="M0 9H24" stroke="black" stroke-width="2" />
+                            <path d="M0 1H24" stroke="black" strokeWidth="2" />
+                            <path d="M0 9H24" stroke="black" strokeWidth="2" />
                         </svg>
                     </button>
                 </div>

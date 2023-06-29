@@ -24,8 +24,13 @@
             bottom: 0;
             height: 100%;
             width: 100%;
-            animation: revealImage 1s cubic-bezier(0.7, 0.6, 0, 1) forwards;
-            animation-delay: inherit;
+        }
+
+        &.activate {
+            &::after {
+                animation: revealImage 1.25s cubic-bezier(0.7, 0.6, 0, 1) forwards;
+                animation-delay: inherit;
+            }
         }
         
         @media screen and (min-width: 2000px) {
@@ -80,7 +85,6 @@
     }
 
     &__summary {
-        animation: fadeIn .5s cubic-bezier(0.7, 0.6, 0, 1) forwards;
         opacity: 0;
         max-width: 350px;
 
@@ -90,7 +94,6 @@
     }
 
     &__footer {
-        animation: fadeIn .5s cubic-bezier(0.7, 0.6, 0, 1) forwards;
         opacity: 0;
     }
 

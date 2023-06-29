@@ -3,12 +3,18 @@ import React, { useRef } from 'react';
 import Image from 'next/image';
 import SkillList from './SkillList';
 
+import { motion } from 'framer-motion';
+
 function ProjectCard({ props, index, showActiveProject }) {
 
     const ref = useRef();
 
     return (
-        <div className={`project-card ${props.Highlight ? 'project-card--featured' : ''}`} ref={ref} style={{ transitionDelay: `${.25 * index}s` }}>
+        <motion.div className={`project-card ${props.Highlight ? 'project-card--featured' : ''}`} ref={ref}
+        initial={{ opacity: 0, translateY: 60 }}
+        whileInView={{ opacity: 1, translateY: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: index * .15 }}>
             <div className='project-card__inner' onClick={showActiveProject}>
                 <div className='project-card__image'>
                     <figure>
@@ -25,7 +31,7 @@ function ProjectCard({ props, index, showActiveProject }) {
                     <SkillList skills={props.Skills} />
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 }
 

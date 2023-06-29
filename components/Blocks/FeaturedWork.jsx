@@ -5,18 +5,20 @@ import Link from 'next/link';
 import ProjectCard from '../Items/ProjectCard';
 import ProjectPopup from '../Items/ProjectPopup';
 
+import { motion } from 'framer-motion';
+
 function FeaturedWork(props) {
 
     const sectionRef = createRef();
 
     const [projects, setProjects] = useState([]);
-    const [ activeProject, setActiveProject ] = useState({});
+    const [activeProject, setActiveProject] = useState({});
 
     useEffect(() => {
 
         let normList = props.Projects.filter(x => !x.Highlight);
         let featuredList = props.Projects.filter(x => x.Highlight);
-        
+
         const firstFeatured = featuredList.slice(0, 1)[0];
         featuredList.splice(0, 1);
 
@@ -30,7 +32,7 @@ function FeaturedWork(props) {
         normList.unshift(firstFeatured);
 
         if (featuredList.length) {
-            normList.push(...featuredList);            
+            normList.push(...featuredList);
         }
 
         const arrangedList = [...normList];
@@ -48,18 +50,26 @@ function FeaturedWork(props) {
     return (
         <section id={props.id} ref={sectionRef}>
             <div className='container tight'>
-                <div className='section-header animated'>
+                <motion.div className='section-header'
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: .125 }}>
                     <h2 className='section-header__title'>{props.Intro.Title != null ? props.Intro.Title : ''}</h2>
-                </div>
+                </motion.div>
                 <div className='section-content'>
                     <div className='project-list flex flex-row flex-wrap'>
                         <ProjectList projects={projects} passProject={(e) => showActiveProject(e)} />
                     </div>
-                    <div className='pt-12'>
+                    <motion.div className='pt-12'
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: ((projects.length - 1) * .15) }}>
                         <Link href='/work' className='btn btn__primary inline-block'>
                             Browse all works
                         </Link>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
             <ProjectPopup project={activeProject} />
