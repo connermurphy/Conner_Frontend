@@ -6,7 +6,7 @@ import Markdown from 'markdown-to-jsx';
 
 import { SplitText } from '../../utils/splitText';
 
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 function Header(props) {
 
@@ -24,13 +24,17 @@ function Header(props) {
                         {props.Title}
                     </SplitText>
                 </h1>
-                <p className='site-header__summary text-md w-full md:w-auto md:flex-1 lg:pl-8 md:ml-auto pt-4 md:pt-0' style={{ animationDelay: `${props.Title.split(' ').length * .5}s` }}>
+                <motion.p className='site-header__summary text-md w-full md:w-auto md:flex-1 lg:pl-8 md:ml-auto pt-4 md:pt-0'
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ delay: .5 }}
+                    viewport={{ once: true }}>
                     <Markdown>
                         {
                             props.Summary != null ? props.Summary : ''
                         }
                     </Markdown>
-                </p>
+                </motion.p>
                 {
                     props.Image != null ? <div className='w-full pt-6 md:pt-8 lg:pt-12'>
                         <figure className={`site-header__image ${isInView ? 'activate' : ''}`}>
@@ -43,12 +47,16 @@ function Header(props) {
                                 width={275}
                                 height={275}
                                 quality={100} />
-                        </figure>                 
+                        </figure>
                     </div> : <></>
                 }
                 {
                     props.Weather || props.Subtitle != null ?
-                        <div className='site-header__footer w-full flex flex-row flex-wrap items-end justify-between pt-6 md:pt-8 lg:pt-12' style={{ animationDelay: `${props.Title.split(' ').length * .5}s` }}>
+                        <motion.div className='site-header__footer w-full flex flex-row flex-wrap items-end justify-between pt-6 md:pt-8 lg:pt-12'
+                            initial={{ opacity: 0, translateY: 30 }}
+                            whileInView={{ opacity: 1, translateY: 0 }}
+                            transition={{ delay: .75 }}
+                            viewport={{ once: true }}>
                             <div className='site-header__weather flex items-center'>
                                 {
                                     props.Weather ? <WeatherDisplay /> : <></>
@@ -57,7 +65,7 @@ function Header(props) {
                             <div className='site-header__location'>
                                 <h2 className='text-3xl md:text-4xl'>{props.Subtitle != null ? props.Subtitle : ''}</h2>
                             </div>
-                        </div> : <></>
+                        </motion.div> : <></>
                 }
             </div>
         </header>
@@ -86,10 +94,10 @@ const WeatherDisplay = () => {
                 hours = hours ? hours : 12;
                 minutes = minutes < 10 ? '0' + minutes : minutes;
                 currentTime = hours + ':' + minutes + ' ' + ampm;
-        
+
                 setTime(currentTime);
             });
-            
+
         let currentTime = 0;
 
         let date = new Date();
