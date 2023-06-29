@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import SocialList from '../Items/SocialList';
 
+import { motion } from 'framer-motion';
+
 function ContactBlock(props) {
 
     const [name, setName] = useState('');
@@ -117,7 +119,11 @@ function ContactBlock(props) {
     return (
         <section id={props.id}>
             <div className='container tight flex flex-row flex-wrap items-start'>
-                <div className='contact-block__form w-full md:w-1/2 lg:w-2/3 md:pr-6 lg:pr-12 xl:pr-16 pb-8 md:pb-0'>
+                <motion.div className='contact-block__form w-full md:w-1/2 lg:w-2/3 md:pr-6 lg:pr-12 xl:pr-16 pb-8 md:pb-0'
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: .35 }}>
                     <form onSubmit={handleSubmit} className='list'>
                         <div className='input-group'>
                             <div className={`inner  ${!nameValid && hasSubmitted ? 'invalid' : ''} ${name.length && nameValid ? 'valid' : ''}`}>
@@ -194,8 +200,12 @@ function ContactBlock(props) {
                             </div>
                         </div>
                     </form>
-                </div>
-                <div className='contact-block__info w-full md:sticky md:top-[20px] md:w-1/2 lg:w-1/3 md:pl-6 lg:pl-12 flex flex-wrap items-start md:justify-end'>                    
+                </motion.div>
+                <motion.div className='contact-block__info w-full md:sticky md:top-[20px] md:w-1/2 lg:w-1/3 md:pl-6 lg:pl-12 flex flex-wrap items-start md:justify-end'
+                initial={{ opacity: 0, translateY: 60 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: .5 }}>
                     {
                         props.Contacts != null && props.Contacts.length ?
                         <div className='w-full pb-6 lg:pb-10'>
@@ -220,7 +230,7 @@ function ContactBlock(props) {
                             <SocialList socials={props.Socials} animate={true} />
                         </div> : <></>
                     }
-                </div>
+                </motion.div>
             </div>
         </section>
     );

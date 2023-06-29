@@ -1,7 +1,5 @@
 .site-nav {
     @apply pt-6;
-    animation: fadeIn 0.25s cubic-bezier(0.7, 0.6, 0, 1) forwards;
-    opacity: 0;
 
     .container {
         background: $black;
@@ -162,7 +160,6 @@
 
             &__socials {
                 opacity: 1;
-                animation: fadeOut 0.5s 0.2s cubic-bezier(0.57, 0.31, 0.39, 1.03) forwards;
 
                 .contacts-list {
                     li {
@@ -206,7 +203,6 @@ body.menu-open {
 
             .menu-content__socials {
                 opacity: 0;
-                animation: fadeIn 0.5s 1.3s cubic-bezier(0.57, 0.31, 0.39, 1.03) forwards;
             }
         }
     }

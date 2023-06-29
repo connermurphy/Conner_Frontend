@@ -36,24 +36,6 @@
         }
     }
 
-    div.inline-block {
-        opacity: 0;
-        transition: opacity .5s cubic-bezier(0.7, 0.6, 0, 1), transform .175s;
-    }
-
-    &:not(.remove2animate) {
-        h2 > div {
-            > span:first-child {
-                animation: textIn 1.5s cubic-bezier(0.7, 0.6, 0, 1) forwards;
-            }
-        }
-
-        div.inline-block {
-            opacity: 1;
-        }
-        
-    }
-
     @media screen and (min-width: $bpMedium) {
         min-height: 400px;
     }
