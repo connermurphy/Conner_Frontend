@@ -117,7 +117,9 @@ const ProjectCarousel = ({ slides }) => {
                                             placeholder={x.placeholder != null ? 'blur' : 'empty'}
                                             blurDataURL={x.placeholder != null ? x.placeholder : ''}
                                             alt='Alt Text' 
-                                            fill />
+                                            width={250}
+                                            height={250}
+                                            quality={100} />
                                     </figure>
                                 </div>
                             )

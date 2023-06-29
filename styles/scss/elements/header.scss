@@ -2,9 +2,9 @@
 
     &__image {
         
-        @apply w-full sm:w-[325px] md:w-[400px] lg:w-[500px];
-        height: 350px;        
+        @apply w-full h-[350px] md:h-[400px] sm:w-[500px] md:w-[600px];       
         overflow: hidden;
+        max-width: 100%;
 
         img {
             position: absolute;
@@ -40,13 +40,12 @@
     }
 
     &__location {
-        line-height: 1.25;        
-        max-width: 200px;
+        line-height: 1.25;   
+        width: auto;     
+        @apply sm:max-w-[200px] md:max-w-[400px] lg:max-w-[700px];
         margin-left: auto;
-
-        @media screen and (min-width: $bpMedium) {
-            max-width: 500px;
-        }
+        flex: 0 1 auto;
+        text-align: right;
 
         @media screen and (min-width: 2000px) {
             max-width: 40vw;
