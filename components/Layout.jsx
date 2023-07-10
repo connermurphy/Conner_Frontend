@@ -21,7 +21,7 @@ function Layout({ PageComponent, SiteSettings }) {
 
         setOgUrl(`${window.location.protocol}//${window.location.host}${router.asPath}`);
 
-    }, [router, PageComponent.props.content.Dark])
+    }, [router])
 
     return (
         <>
