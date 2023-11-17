@@ -70,7 +70,7 @@ function ProjectPopup({ project }) {
                         {
                             project.Link != null ?
                             <div>
-                                <Link href={project.Link} className='btn btn__primary inline-block' target='_blank'>
+                                <Link href={project.Link} className='btn btn__primary inline-block text-center' target='_blank'>
                                     View Site
                                 </Link>
                             </div> : <></>

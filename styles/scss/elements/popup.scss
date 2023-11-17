@@ -23,15 +23,16 @@
         transition: right 0.25s 0.1s ease-in;
 
         @media screen and (min-width: $bpMedium) {
-            width: 90%;
+            width: 90vw;
         }
 
         @media screen and (min-width: $bpLarge) {
-            width: 70%;
+            width: 65vw;
         }
 
         @media screen and (min-width: $bpXLarge) {
-            width: 65%;
+            width: 50vw;
+            max-width: 50vw;
         }
     }
 
